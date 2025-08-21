@@ -56,6 +56,7 @@ class ImageSequence(Sequence):
             img = Image.open(f)
             img = img.convert('RGB')
 
+            """
             w_orig, h_orig = img.size
             w, h = w_orig//32*32, h_orig//32*32
 
@@ -64,6 +65,8 @@ class ImageSequence(Sequence):
             right = left + w
             lower = upper + h
             img = img.crop((left, upper, right, lower))
+            """
+
             return np.array(img).astype("float32") / 255
 
     def _get_path_from_name(self, file_names: Union[list, str]) -> Union[list, str]:

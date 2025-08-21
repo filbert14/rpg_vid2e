@@ -23,7 +23,7 @@ class Upsampler:
         self.dest_dir = output_dir
 
         path = os.path.join(os.path.dirname(__file__), "../../pretrained_models/film_net/Style/saved_model")
-        self.interpolator = Interpolator(path, None)
+        self.interpolator = Interpolator(path, 32)
 
     def upsample(self):
         sequence_counter = 0
